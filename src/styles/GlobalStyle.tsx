@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
         }
           
         ::-webkit-scrollbar-track {
-            background: #000;
+            background: #adadad;
         }
           
         ::-webkit-scrollbar-thumb {
@@ -26,8 +26,6 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
     }
     body {
-        width: 100vw;
-        height: 100vh;
         color: ${({ theme }) => theme.colors.primary};
         background-color: ${({ theme }) => theme.colors.background};
         transition: all 0.8s ease;

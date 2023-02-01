@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 
 type Response<T> = [
@@ -5,24 +7,24 @@ type Response<T> = [
   Dispatch<SetStateAction<T>>,
 ];
 
-function usePersistedState<T>(key: string, initialState: T): Response<T> {
-  const [state, setState] = useState(initialState)
-
+function usePersistedState<T>(key: string, initialState: T) {
+  const [state, setState] = useState<T>(initialState)
+    
   useEffect(() => {
     const storageValue = localStorage.getItem(key);
+    setState(storageValue ? JSON.parse(storageValue) : initialState);
+  }, [initialState, key]);
 
-    if (storageValue) {
-      setState(JSON.parse(storageValue));
-    } else {
-      setState(initialState);
-    }
-  }, [key, initialState] )
+  const setValue = (value: T) => {
+    setState(value);
+    window.localStorage.setItem(key, JSON.stringify(value));
+  };
 
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(state));
-  }, [key, state]);
+  // useEffect(() => {
+  //   localStorage.setItem(key, JSON.stringify(state));
+  // }, [key, state]);
 
-  return [state, setState];
+  return [state, setValue] as const;
 }
 
 export default usePersistedState;

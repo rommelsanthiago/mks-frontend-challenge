@@ -1,12 +1,17 @@
 "use client";
 
 import React from 'react';
+import {Provider} from 'react-redux';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import { ThemeProvider, DefaultTheme } from "styled-components";
 
-import { lightTheme, darktheme } from '../styles';
+import store from '../store';
+import Main from '../components/Main';
 import Header from '../components/Header';
 import GlobalStyle from '../styles/GlobalStyle';
-import usePeristedState from '../utils/usePersistedState'
+import { lightTheme, darktheme } from '../styles';
+import usePeristedState from '../utils/usePersistedState';
 
 const App = () => {
   const [
@@ -19,11 +24,24 @@ const App = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+    <Provider store={ store }>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Header toggleTheme={toggleTheme} />
-        <h1>Home</h1>
-    </ThemeProvider>
+        <Main />
+        <ToastContainer
+          position='top-right'
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover={false}
+        />
+      </ThemeProvider>
+    </Provider>
   )
 };
 

@@ -33,7 +33,7 @@ export const lightTheme = {
     secundary: "#EEE",
     border: "#878787",
     text: "#000",
-    background: "#FFF",
+    background: "#E5E5E5",
     indicator: "#CCC",
   },
   ...defaultTheme
