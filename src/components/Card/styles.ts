@@ -132,6 +132,7 @@ export const ButtonCard = styled.button`
   justify-content: space-around;
   font-size: 14px;
   font-weight: 600;
+  border: none;
   border-radius: 0 0 8px 8px;
   color: white;
   background: #0F52BA;
