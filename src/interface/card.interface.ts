@@ -4,4 +4,4 @@ export default interface CardInterface {
 	price: string;
 	photo: string;
 	description: string;
-}
+};

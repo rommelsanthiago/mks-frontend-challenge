@@ -12,6 +12,7 @@ import Header from '../components/Header';
 import GlobalStyle from '../styles/GlobalStyle';
 import { lightTheme, darktheme } from '../styles';
 import usePeristedState from '../utils/usePersistedState';
+import Cart from '../components/Cart'
 
 const App = () => {
   const [
@@ -29,6 +30,7 @@ const App = () => {
         <GlobalStyle />
         <Header toggleTheme={toggleTheme} />
         <Main />
+        <Cart />
         <ToastContainer
           position='top-right'
           autoClose={2000}
