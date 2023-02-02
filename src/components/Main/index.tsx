@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import Card from '../Card';
 import * as S from './styles';
-import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../store';
 import {asyncGetProducts} from '../../store/Stock.store';
 

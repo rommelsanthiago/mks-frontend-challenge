@@ -6,7 +6,6 @@ import { ThemeContext } from 'styled-components';
 import {useDispatch, useSelector} from 'react-redux';
 
 import * as S from './styles';
-import { Button } from '../Button';
 import {RootState} from '../../store';
 import {openCart} from '../../store/Stock.store';
 

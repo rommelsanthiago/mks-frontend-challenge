@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from '../Button';
 
 export const Container = styled.div`
     height: 18em;
@@ -125,7 +124,7 @@ export const Image = styled.div`
   margin-bottom: 14px;
 `;
 
-export const ButtonCard = styled(Button)`
+export const ButtonCard = styled.button`
   width: 100%;
   height: 3em;
   display: flex;

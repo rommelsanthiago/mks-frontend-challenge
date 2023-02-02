@@ -20,10 +20,6 @@ function usePersistedState<T>(key: string, initialState: T) {
     window.localStorage.setItem(key, JSON.stringify(value));
   };
 
-  // useEffect(() => {
-  //   localStorage.setItem(key, JSON.stringify(state));
-  // }, [key, state]);
-
   return [state, setValue] as const;
 }
 

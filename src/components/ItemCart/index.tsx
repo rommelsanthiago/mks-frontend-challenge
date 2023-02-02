@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import {toast} from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -7,7 +8,6 @@ import {RootState} from '../../store';
 import ItemCartInterface from '../../interface/itemCart.interface';
 import ProductInterface from '../../interface/product.interface';
 import {keepAdding, removeFromCart} from '../../store/Stock.store';
-import Image from 'next/image';
 
 const ItemCart = ({id, name, photo, quantity, price}: ItemCartInterface) => {
 	const dispatch = useDispatch();
